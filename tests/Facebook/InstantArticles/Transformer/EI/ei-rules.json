@@ -30,6 +30,11 @@
                 "author.name": {
                   "selector": "a.post-metadata__author-name",
                   "type": "string"
+                },
+                "image.url": {
+                  "selector": "meta[property='og:image']",
+                  "attribute": "content",
+                  "type": "string"
                 }
             }
         },
