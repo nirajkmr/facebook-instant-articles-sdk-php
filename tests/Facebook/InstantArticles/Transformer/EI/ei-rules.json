@@ -17,6 +17,12 @@
                     "selector": "link[rel=canonical]",
                     "attribute": "href"
                 },
+                "article.publish": {
+                    "selector": "meta[property='article:published_time']",
+                    "type": "date",
+                    "attribute": "content",
+                    "format": "Y-m-d H:i:s T"
+                },
                 "article.body":{
                     "selector":"div.post-content",
                     "type":"element"
