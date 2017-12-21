@@ -1,0 +1,119 @@
+{
+    "rules":[
+
+        {
+            "class":"TextNodeRule"
+        },
+        {
+            "class":"GlobalRule",
+            "selector":"html",
+            "properties":{
+                "article.title":{
+                    "type":"element",
+                    "selector":"h1.post-article__post-title__title"
+                },
+                "article.canonical": {
+                    "type" : "string",
+                    "selector": "link[rel=canonical]",
+                    "attribute": "href"
+                },
+                "article.body":{
+                    "selector":"div.post-content",
+                    "type":"element"
+                },
+                "author.name": {
+                  "selector": "a.post-metadata__author-name",
+                  "type": "string"
+                }
+            }
+        },
+
+        {
+            "class":"BoldRule",
+            "selector":"b"
+        },
+        {
+            "class":"ParagraphRule",
+            "selector":"p"
+        },
+        {
+            "class":"PassThroughRule",
+            "selector":"inline"
+        },
+        {
+            "class":"ParagraphRule",
+            "selector":"p inline"
+        },
+        {
+            "class":"HeaderTitleRule",
+            "selector":"h1"
+        },
+        {
+            "class": "AnchorRule",
+            "selector" : "a",
+            "properties" : {
+                "anchor.href" : {
+                    "type" : "string",
+                    "selector" : "a",
+                    "attribute": "href"
+                },
+                "anchor.rel" : {
+                    "type" : "string",
+                    "selector" : "a",
+                    "attribute": "rel"
+                }
+            }
+        },
+        {
+            "class": "ImageRule",
+            "selector": "img",
+            "properties": {
+                "image.url": {
+                    "type": "string",
+                    "selector": "img",
+                    "attribute": "src"
+                }
+            }
+        },
+        {
+            "class": "BoldRule",
+            "selector" : "strong"
+        },
+        {
+            "class": "IgnoreRule",
+            "selector": "br"
+        },
+        {
+          "class": "PassThroughRule",
+          "selector": "i.wrapper"
+        },
+        {
+          "class": "VideoRule",
+          "selector": "div.video-container",
+          "properties": {
+            "video.url": {
+              "type": "string",
+              "attribute": "data-highest_qualtiy_file_url"
+            }
+          }
+        },
+        {
+            "class": "InteractiveRule",
+            "selector" : "div.tweet-container",
+            "properties" : {
+                "interactive.iframe" : {
+                    "type" : "multiple",
+                    "children": [
+                        {
+                            "type": "element",
+                            "selector": "div"
+                        }, {
+                            "type": "fragment",
+                            "fragment": "<script defer=\"true\" src=\"https://platform.twitter.com/widgets.js\" name=\"twitter\"></script>"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
